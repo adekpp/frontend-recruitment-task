@@ -1,6 +1,10 @@
 .modal-wrapper {
+    visibility: hidden;
+}
+.--open {
     visibility: visible;
 }
+
 
 .backdrop {
     display: flex;
@@ -44,4 +48,41 @@
     cursor: pointer;
     width: 12px;
     height: 12px;
+}
+
+.btn-reset {
+  
+  border-radius: 32px;
+  padding: 5px 20px;
+  background-color: #e4c1ae;
+  color: white;
+  border: none;
+  margin-top: 32px;
+  font-size: 1em;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.btn-reset {
+  display: none;
+  position: relative;
+  border-radius: 32px;
+  padding: 5px 20px;
+  background-color: #e4c1ae;
+  color: white;
+  border: none;
+  margin-top: 32px;
+  font-size: 1em;
+  font-weight: 700;
+  cursor: pointer;
+}
+.--active {
+  display: block;
+}
+.btn-reset:hover {
+  background-color: #d1a69e;
+}
+.btn-reset:active {
+  transform: scale(0.85);
+  transition: transform 0.1s ease-in-out;
 }
