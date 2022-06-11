@@ -5,11 +5,11 @@ const modal = document.querySelector(".modal");
 const counter = document.querySelector(".counter");
 const resetButton = document.querySelector(".btn-reset");
 const modalContainer = document.querySelector(".modal-container");
-
+const url = "https://jsonplaceholder.typicode.com/users"
 const tableWithUsers = async () => {
   const loaderWrapper = createLoader();
   modalContainer.appendChild(loaderWrapper);
-  const users = await getUsers();
+  const users = await getUsers(url);
   const div = await createTable(users);
   loaderWrapper.remove();
   modalContainer.appendChild(div);
