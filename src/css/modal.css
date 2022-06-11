@@ -1,59 +1,69 @@
-.modal-wrapper {
-    visibility: hidden;
-}
-.--open {
-    visibility: visible;
-}
-
-
-.backdrop {
-    display: flex;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(18, 18, 18, 0.5);
-    z-index: 10;
-    justify-content: center;
-    align-items: center;
-}
-
-
 .modal {
-    position: relative;
-    width: 920px;
-    max-height: 210px;
-    background-color: white;
-    padding-top: 56px;
-    padding-bottom: 56px;
-    padding-left: 95px;
+  visibility: hidden;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.783);
+  z-index: 1;
 }
 
-.modal h2 {
-    font-size: 2.625em;
-    font-weight: 700;
+.modal-content span {
+  font-weight: 700;
 }
 
-.modal p {
-    font-size: 1em;
-    font-weight: 300;
-    line-height: 150%;
+.--open {
+  visibility: visible;
+}
+
+.modal-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  max-width: 920px;
+  width: 100%;
+  background-color: white;
+  margin: 20px;
+  padding: 24px;
+}
+
+.modal-content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: flex-start;
+  background-color: #fff;
 }
 
 .close-btn {
-    position: absolute;
-    top: 46px;
-    right: 46px;
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-    width: 12px;
-    height: 12px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 28px;
+  height: 28px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.modal-title {
+  font-size: 1.5em;
+  font-weight: 700;
+  padding: 10px;
+}
+
+.modal-content {
+  padding: 20px;
 }
 
 .btn-reset {
-  
   border-radius: 32px;
-  padding: 5px 20px;
+  padding: 6px 10px;
   background-color: #e4c1ae;
   color: white;
   border: none;
@@ -63,26 +73,14 @@
   cursor: pointer;
 }
 
-.btn-reset {
-  display: none;
-  position: relative;
-  border-radius: 32px;
-  padding: 5px 20px;
-  background-color: #e4c1ae;
-  color: white;
-  border: none;
-  margin-top: 32px;
-  font-size: 1em;
-  font-weight: 700;
-  cursor: pointer;
-}
-.--active {
-  display: block;
-}
-.btn-reset:hover {
-  background-color: #d1a69e;
-}
-.btn-reset:active {
-  transform: scale(0.85);
-  transition: transform 0.1s ease-in-out;
+@media screen and (max-width: 1024px) {
+  .modal-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    background-color: white;
+    margin: 20px;
+    padding: 24px;
+  }
 }

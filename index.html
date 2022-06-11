@@ -8,30 +8,33 @@
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
     <link rel="stylesheet" href="src/css/main.css" />
-    <script src="./src/js/main.js" defer></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="./src/js/main.js" type="module" defer></script>
     <title>Adrian Pietryga - Recruitment task</title>
   </head>
   <body>
-    <div class="modal-wrapper">
-      <div class="backdrop">
-        <div class="modal">
-          <button class="close-btn">&#10006;</button>
+    <div class="modal" role="alert">
+      <div class="modal-container">
+        <button class="close-btn">&#10006;</button>
+        <div class="modal-content">
+          
           <h2>Alert!</h2>
           <p>
             You have clicked <span class="counter"></span> times to related
             button.
           </p>
-          <button class="btn-reset">RESET COUNTER</button>
+          <button class="btn-reset">Reset Counter</button>
         </div>
+      </div>
       </div>
     </div>
 
     <div class="container">
       <section class="section">
-        <div class="image">
+        <div class="image" role="img">
           <img
             src="./images/sean-o-KMn4VEeEPR8-unsplash_1_s6zmfh_c_scale,w_784.jpg"
-            alt="beach"
+            alt="beach with sun"
           />
         </div>
         <article>
@@ -41,9 +44,7 @@
             and protection for modern and legacy infrastructures and SaaS
             platforms, managed via a single app with no hardware required.
           </p>
-          <div class="button">
-            <button>Button</button>
-          </div>
+            <button id="main-btn" role="button">Button</button>
         </article>
       </section>
     </div>

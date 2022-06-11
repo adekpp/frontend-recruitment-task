@@ -1,12 +1,21 @@
-const button = document.querySelector(".button");
+import { getUsers, createTable, createLoader } from "./data.js";
+const button = document.querySelector("#main-btn");
 const closeButton = document.querySelector(".close-btn");
-const modal = document.querySelector(".modal-wrapper");
-const backdrop = document.querySelector(".backdrop");
+const modal = document.querySelector(".modal");
 const counter = document.querySelector(".counter");
 const resetButton = document.querySelector(".btn-reset");
+const modalContainer = document.querySelector(".modal-container");
+
+const tableWithUsers = async () => {
+  const loaderWrapper = createLoader();
+  modalContainer.appendChild(loaderWrapper);
+  const users = await getUsers();
+  const div = await createTable(users);
+  loaderWrapper.remove();
+  modalContainer.appendChild(div);
+};
 
 let clickCounter = localStorage.getItem("clickCounter");
-
 const increaseCounter = () => {
   clickCounter++;
   localStorage.setItem("clickCounter", clickCounter);
@@ -22,6 +31,7 @@ const resetCounter = () => {
 const openModal = () => {
   modal.classList.toggle("--open");
   increaseCounter();
+  tableWithUsers();
 
   if (clickCounter > 5) {
     resetButton.classList.toggle("--active");
@@ -31,10 +41,12 @@ const openModal = () => {
 const closeModal = () => {
   modal.classList.toggle("--open");
   resetButton.classList.remove("--active");
+  const table = document.querySelector(".table-wrapper");
+  table.remove();
 };
 
 const handleClickOutside = (e) => {
-  if (e.target === backdrop) {
+  if (e.target === modal) {
     closeModal();
   }
 };
