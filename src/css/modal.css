@@ -71,6 +71,11 @@
   font-size: 1em;
   font-weight: 700;
   cursor: pointer;
+  visibility: hidden;
+}
+
+.--active {
+  visibility: visible;
 }
 
 @media screen and (max-width: 1024px) {
